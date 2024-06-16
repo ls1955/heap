@@ -18,7 +18,7 @@ module Heap
         parent_pos = (pos - 1) >> 1
         parent = self[parent_pos]
 
-        parent <= new_obj and break
+        (parent <=> new_obj) == 1 or break
 
         self[pos] = parent
         pos = parent_pos
